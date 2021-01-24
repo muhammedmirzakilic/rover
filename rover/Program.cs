@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.IO.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,8 +13,8 @@ namespace rover
                 .AddSingleton<IFileSystem, FileSystem>()
                 .AddSingleton<Nasa>()
                 .BuildServiceProvider();
-
-            var instructionsFilePath = @"./instructions.txt";
+            var currentPath = AppDomain.CurrentDomain.BaseDirectory;
+            var instructionsFilePath = Path.Combine(currentPath, "instructions.txt");
             var nasa = serviceProvider.GetService<Nasa>();
             nasa.Run(instructionsFilePath);
         }
