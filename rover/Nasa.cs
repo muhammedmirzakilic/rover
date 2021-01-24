@@ -24,26 +24,38 @@ namespace rover
                 throw new Exception("Invalid instruction set!");
             }
             var rangeSet = inputSet[0].Split(" ");
-            var maxX = Convert.ToInt32(rangeSet[0]);
-            var maxY = Convert.ToInt32(rangeSet[1]);
+            var maxXResult = int.TryParse(rangeSet[0], out int  maxX);
+            var maxYResult = int.TryParse(rangeSet[1], out int  maxY);
+            if(!maxXResult || !maxYResult || rangeSet.Length != 2)
+            {
+                throw new Exception("Invalid plateau coordinates!");
+            }
 
             for (int i = 1; i < inputSet.Length; i += 2)
             {
                 var initialPosition = inputSet[i].Split(" ");
-                var x = Convert.ToInt32(initialPosition[0]);
-                var y = Convert.ToInt32(initialPosition[1]);
-                _ = Enum.TryParse(initialPosition[2], out Direction heading);
+                var xResult = int.TryParse(initialPosition[0], out int x);
+                var yResult = int.TryParse(initialPosition[1], out int y);
+                var headingResult = Enum.TryParse(initialPosition[2], out Direction heading);
+                if (!xResult || !yResult || !headingResult)
+                {
+                    throw new Exception("Invalid rover position!");
+                }
                 var rover = new Rover(x, y, heading, maxX, maxY);
                 var instructionSet = inputSet[i + 1];
                 for (int j = 0; j < instructionSet.Length; j++)
                 {
-                    _ = Enum.TryParse(instructionSet[j].ToString(), out Instruction instruction);
+                    var instructionResult = Enum.TryParse(instructionSet[j].ToString(),
+                        out Instruction instruction);
+                    if (!instructionResult)
+                    {
+                        throw new Exception("Invalid instruction!");
+                    }
                     rover.RunInstruction(instruction);
                 }
                 Console.WriteLine(rover);
             }
             Console.WriteLine("Finished");
-            Console.ReadLine();
         }
     }
 }
