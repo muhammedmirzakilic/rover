@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.808.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rover", "rover\rover.csproj", "{A167078F-3661-411E-ABA3-8D459F9B7179}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "roverTests", "roverTests\roverTests.csproj", "{1C6466E5-C9B3-4220-95FF-CE66B6FC3180}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A167078F-3661-411E-ABA3-8D459F9B7179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A167078F-3661-411E-ABA3-8D459F9B7179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A167078F-3661-411E-ABA3-8D459F9B7179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6466E5-C9B3-4220-95FF-CE66B6FC3180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6466E5-C9B3-4220-95FF-CE66B6FC3180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6466E5-C9B3-4220-95FF-CE66B6FC3180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6466E5-C9B3-4220-95FF-CE66B6FC3180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
