@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace rover
 {
@@ -6,7 +8,14 @@ namespace rover
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IFileSystem, FileSystem>()
+                .AddSingleton<Nasa>()
+                .BuildServiceProvider();
+
+            var instructionsFilePath = @"./instructions.txt";
+            var nasa = serviceProvider.GetService<Nasa>();
+            nasa.Run(instructionsFilePath);
         }
     }
 }

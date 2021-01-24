@@ -10,4 +10,9 @@
     <PackageReference Include="System.IO.Abstractions.TestingHelpers" Version="13.2.9" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="instructions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
