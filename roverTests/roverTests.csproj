@@ -20,4 +20,7 @@
     <PackageReference Include="Moq" Version="4.16.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\rover\rover.csproj" />
+  </ItemGroup>
 </Project>
